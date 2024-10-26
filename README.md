@@ -1,95 +1,37 @@
 <img width="1280" alt="readme-banner" src="https://github.com/user-attachments/assets/35332e92-44cb-425b-9dff-27bcf1023c6c">
 
-# [Project Name] 🎯
+#QUIRK 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Triple crew
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: Rifa vp - EMEA College of arts and science, Kondotty
+- Member 2: Fahmiya tp - EMEA College of arts and science, Kondotty
+- Member 3:Murshida kk - EMEA College of arts and science, Kondotty
 
 ### Project Description
-[2-3 lines about what your project does]
+This is a fun and entertaining web.It has a quiz section where the questions are fun,meaningless and which does'nt have a specific answer.And it has a spin the wheel section which consists of funny tasks that can't be done by anybody.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+People need a break from productivity and seriousness; a fun app offers random, pointless thins to help them relax and laugh.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+A fun web that helps users unwind with random, amusing tasks and quiz.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- html,css,js
+- none
+- none
+- VScode
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
-
-### Implementation
-For Software:
-# Installation
-[commands]
 
 # Run
-[commands]
-
-### Project Documentation
-For Software:
-
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+Live on server
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
