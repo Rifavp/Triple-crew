@@ -1,123 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #995596e1;
-    
+  background: linear-gradient(135deg, #94f0ac, #1cb5e0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column; /* Stack children vertically */
 }
-h1 {
-    color : rgb(33, 6, 6);
-    font-family: "Sofia", sans-serif;
-
-
-
+a {
+  text-decoration: none !important;
 }
 
-.wheel-container {
-    position: relative;
-    width: 500px;
-    height: 500px;
+/* Heading for the question */
+#second-heading {
+  color: #FFFFFF;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 38px;
+  font-weight: bolder;
+  animation: fadeInUp 1s ease; /* Animation for fade-in and upward motion */
+  margin-bottom: 20px; /* Space below the first heading */
 }
 
-.wheel {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 10px solid #0f0b0b;
-    position: relative;
-    overflow: hidden;
-    transform: rotate(0deg);
-    transition: transform 4s ease-out;
+/* Second heading with animation */
+h2 {
+  color: #000000;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  animation: fadeInUp 1.2s ease; /* Slightly delayed animation */
+  margin-bottom: 10px; /* Space below the second heading */
 }
 
-.wheel div {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    top: 50%;
-    left: 50%;
-    transform-origin: 0 0;
-    clip-path: polygon(0 0, 100% 0, 100% 100%);
+/* Button container styling */
+.button-container {
+  display: flex;                 
+  justify-content: flex-start;       /* Center buttons horizontally */
+  align-items: center;           /* Center items vertically */
+  flex-direction: column;        /* Stack buttons vertically */
+  height: 100%;                  /* Take full height of the container */
+  gap: 20px;   
+                   /* Space between buttons */
 }
 
-.wheel div:nth-child(1) { background-color: #6c98d5; transform: rotate(0deg); }
-.wheel div:nth-child(2) { background-color: #FFA07A; transform: rotate(45deg); }
-.wheel div:nth-child(3) { background-color: #FFD700; transform: rotate(90deg); }
-.wheel div:nth-child(4) { background-color: #737ca0; transform: rotate(135deg); }
-.wheel div:nth-child(5) { background-color: #78cf78; transform: rotate(180deg); }
-.wheel div:nth-child(6) { background-color: #348e79; transform: rotate(225deg); }
-.wheel div:nth-child(7) { background-color: #bc589e; transform: rotate(270deg); }
-.wheel div:nth-child(8) { background-color: #ce99cc; transform: rotate(315deg); }
-
-.pointer {
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    z-index: 10;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 20px solid #271f1f;
+/* Start button styling */
+.start-button {
+  background-color: #28a745;    
+  color: black;                 
+  border: none;                 
+  border-radius: 50px;         
+  padding: 15px 30px;          /* Increased padding */
+  font-size: 20px;              
+  cursor: pointer;              
+  transition: background-color 0.3s, transform 0.3s; /* Add transform transition */
+  animation: bounceIn 1s ease; /* Bounce-in animation */
+  margin-top: 10px; /* Space above the start button */
 }
 
-.spin-btn {
-    display: inline-block;
-    margin-top: 50px;
-    padding: 10px 20px;
-    font-size: 20px;
-    font-style: oblique ;
-    color: #cfeb97;
-    background-color: #2540bb;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.start-button:hover {
+  background-color: #218838;    
+  transform: scale(1.05); /* Slightly increase size on hover */
 }
 
-.spin-btn:hover {
-    background-color: #7e7d7d;
+/* Second start button styling */
+.start-button1 {
+  background-color: #28a745;    
+  color: black;                 
+  border: none;                 
+  border-radius: 50px;         
+  padding: 15px 30px;          /* Increased padding */
+  font-size: 20px;              
+  cursor: pointer;              
+  transition: background-color 0.3s, transform 0.3s; /* Add transform transition */
+  margin: 0 10px;               /* Space between buttons */
+  animation: bounceIn 1s ease; /* Bounce-in animation */
+  margin-top: 10px; /* Space above the second button */
 }
 
-
-
-.popup {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+.start-button1:hover {
+  background-color: #218838;    
+  transform: scale(1.05); /* Slightly increase size on hover */
 }
 
-.popup-content {
-    background-color: rgb(208, 175, 230);
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 300px; /* Could be more or less, depending on screen size */
-    text-align: center;
-    border-radius: 20px;
+/* Options container */
+#options-container {
+  display: flex;
+  gap: 10px;
 }
 
-.close {
-    color: #130f0f;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
 }
-

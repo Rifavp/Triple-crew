@@ -1,137 +1,56 @@
-// Function to spin the wheel
-function spinWheel() {
-    const wheel = document.getElementById('wheel');
-    const randomRotation = Math.floor(Math.random() * 3600) + 720; // Random rotation between 720 and 4320 degrees
-    wheel.style.transform = `rotate(${randomRotation}deg)`;
+// script.js
 
-    // Open pop-up after the spin is complete
-    setTimeout(openPopup, 4000); // Adjust delay to match spin duration
-}
-
-
-
-
-// Function to open the pop-up
-function openPopup() {
-    document.getElementById('popup').style.display = 'block';
-}
-
-// Function to close the pop-up
-function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-}
-
-// Attach event listeners
-document.getElementById('spinButton').addEventListener('click', spinWheel);
-document.getElementById('closePopup').addEventListener('click', closePopup);
-
-// Close the popup if the user clicks outside of it
-window.addEventListener('click', function(event) {
-    const popup = document.getElementById('popup');
-    if (event.target === popup) {
-        closePopup();
-    }
-});
-
-// Function to spin the wheel
-function spinWheel() {
-    const wheel = document.getElementById('wheel');
-    const randomRotation = Math.floor(Math.random() * 3600) + 720; // Random rotation between 720 and 4320 degrees
-    wheel.style.transform = `rotate(${randomRotation}deg)`;
-
-    // Open pop-up after the spin is complete
-    setTimeout(openPopup, 4000); // Adjust delay to match spin duration
-}
-
-// Function to open the pop-up
-function openPopup() {
-    document.getElementById('popup').style.display = 'block';
-}
-
-// Function to close the pop-up
-function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-}
-
-// Attach event listeners
-document.getElementById('spinButton').addEventListener('click', spinWheel);
-document.getElementById('closePopup').addEventListener('click', closePopup);
-
-// Close the popup if the user clicks outside of it
-window.addEventListener('click', function(event) {
-    const popup = document.getElementById('popup');
-    if (event.target === popup) {
-        closePopup();
-    }
-});
-
-
-// Function to spin the wheel
-function spinWheel() {
-    const wheel = document.getElementById('wheel');
-    const randomRotation = Math.floor(Math.random() * 3600) + 720; // Random rotation between 720 and 4320 degrees
-    wheel.style.transform = `rotate(${randomRotation}deg)`;
-
-    // Open pop-up after the spin is complete
-    setTimeout(openPopup, 4000); // Adjust delay to match spin duration
-}
-
-// Function to open the pop-up
-function openPopup() {
-    document.getElementById('popup').style.display = 'block';
-}
-
-// Function to close the pop-up
-function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-}
-
-// Attach event listeners
-document.getElementById('spinButton').addEventListener('click', spinWheel);
-document.getElementById('closePopup').addEventListener('click', closePopup);
-
-// Close the popup if the user clicks outside of it
-window.addEventListener('click', function(event) {
-    const popup = document.getElementById('popup');
-    if (event.target === popup) {
-        closePopup();
-    }
-});
-
-
-
-
-
-if()
-const tasks = [
-    { color: '#6c98d5', task: 'Catch the wind' },
-    { color: '#FFA07A', task: 'Teach a fish to swim' },
-    { color: '#FFD700', task: 'Be invisible' },
-    { color: '#737ca0', task: 'Fly a kite on Mars' },
-    { color: '#78cf78', task: 'Travel to the moon on a paper plane' },
-    { color: '#348e79', task: 'Count the stars' },
-    { color: '#bc589e', task: 'Hug the cloud' },
-    { color: '#ce99cc', task: 'Touch the rainbow' },
+// Array of questions and options
+const questions = [
+    {
+        question: "What is the square root of a sandwich?",
+        options: [36, 78, 44]
+    },
+    {
+        question: "What is the best way to turn off the sun?",
+        options: ["Pour water", "Call Tech Support", "Unplug the Sun"]
+    },
+    {
+        question: "Fish is always in water,so why does it bad smell",
+        options: ["Water Doesn't Mean Soap" , "They Forget to Use Fishy Deodorant ","Underwater Gym Sessions"]
+    },
+    {
+        question: "Why do dogs chase their tails?",
+        options: ["Training for the Dog Olympics.", "Their tail looks suspicious.", "It's a built-in workout!"]
+    },
+    {
+    
+        question: "What is the first letter in word Apple?",
+        options: ["C","Z", "B"]
+    },
+    {
+    
+        question: "What color is a penguins favorite music?",
+        options: ["jazz","purple", "croissant"]
+    },
 ];
 
-function showPopupForColor(color) {
-    // Find the task that matches the color
-    const task = tasks.find(task => task.color === color);
+// Function to load a random question
+function loadRandomQuestion() {
+    const randomIndex = Math.floor(Math.random() * questions.length);
+    const selectedQuestion = questions[randomIndex];
 
-    // Update popup text with the found task
-    if (task) {
-        document.getElementById("popupTask").innerHTML = task.task;
-    } else {
-        document.getElementById("popupTask").innerHTML = "No task found!";
-    }
+    // Update the question text
+    document.getElementById('question').innerText = selectedQuestion.question;
 
-    // Show the popup
-    document.getElementById("popup").style.display = "block";
+    // Get the options container
+    const optionsContainer = document.getElementById('options-container');
+    optionsContainer.innerHTML = ''; // Clear existing options
+
+    // Add new buttons for options
+    selectedQuestion.options.forEach(option => {
+        const button = document.createElement('a');
+        button.href = "oops.html"; // Set the link for the button
+        button.className = 'start-button';
+        button.innerText = option; // Set button text
+        optionsContainer.appendChild(button); // Add button to container
+    });
 }
 
-// Close the popup when the close button is clicked
-document.getElementById("closePopup").onclick = function() {
-    document.getElementById("popup").style.display = "none";
-};
-
-// Example usage: Call showPopupForColor('#FFA07A') when the wheel stops
+// Load a random question when the page loads
+window.onload = loadRandomQuestion;
